@@ -1,10 +1,9 @@
 <?php
-
 session_start();
 require_once ("Include/dbconnect.php");
+$dbc = db_connect();
 
 function check_input($data) {
-    $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
@@ -18,24 +17,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = check_input($_POST["signup_phone"]);
     $role = "student";
 
-    $sq1check = "SELECT COUNT(username) FROM users WHERE username='$username'";
+    $sqlquerycheck = "SELECT username FROM users WHERE username='$username'";
+    $sqlcheck = mysqli_query($dbc, $sqlquerycheck);
 
-    if(mysqli_num_rows($sq1check) > 0) {
+    if(mysqli_num_rows($sqlcheck) > 0) {
         echo "
             <script>
                 window.alert('Username or Email had already exist');
-				window.history.back();
+                window.location.href = 'Index.php';
 			</script>";
+        exit();
     }
 
-    $sqlregister = "INSERT INTO users VALUES ('$username', '$password', '$matrics', '$email', '$phone', '$role')";
+    $password = md5($password);
+
+    $sqlqueryregister = "INSERT INTO users VALUES ('$username', '$password', '$matrics', '$email', '$phone', '$role')";
+    $sqlregister = mysqli_query($dbc, $sqlqueryregister);
     if($sqlregister) {
         echo "<script>
 				  window.alert('Successfully registered');
-				  window.location.href = 'Home.php';
+				  window.location.href = 'Index.php';
 				  </script>";
-    }
-    else {
+    } else {
         echo "
             <script>
                 window.alert('Failed to register your account');

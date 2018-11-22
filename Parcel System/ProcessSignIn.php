@@ -1,32 +1,30 @@
 <?php
-
 session_start();
 require_once ("Include/dbconnect.php");
+$dbc = db_connect();
 
-$username = trim ( $_POST ['username'] );
-$password = trim ( $_POST ['password'] );
-$hased_password = md5($password);
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = trim ( $_POST ['username'] );
+    $password = trim ( $_POST ['password'] );
+    $role = $_POST['role'];
+    $password = md5($password);
 
-$sql = "SELECT * FROM `users`, `roles` WHERE `username` LIKE '$username' 
-        AND `password` LIKE '$hashed_pw' AND `users`.`roleid` = `roles`.`roleid`";
+    $sqlquerylogin = "SELECT * FROM user WHERE username = '$username' AND password LIKE '$password' AND role = '$role'";
+    $sqllogin = mysqli_query($dbc, $sqlquerylogin);
 
-$result = mysqli_query($dbc, $sql);
-
-if(mysqli_num_rows($result) <= 0) {
-    // Message for Invalid Login
-    exit();
+    if ($sqlquerylogin && $role == 'Admin') {
+        header("Location:AdminMenu.php");
+    } else if ($sqlquerylogin && $role == 'Student') {
+        header("Location:StudentMenu.php");
+    } else {
+        echo "<script>
+            window.alert('Username and password or role does not match');
+		    window.history.back();
+          </script>";
+    }
 }
 
-$record = mysqli_fetch_array($result);
-
-$_SESSION['userid'] = $record['userid'];
-$_SESSION['fullname'] = $record['fullname'];
-$_SESSION['roleid'] = $record['roleid'];
-
 mysqli_close($dbc);
-
-header("Location:");
-
 exit();
 
 ?>

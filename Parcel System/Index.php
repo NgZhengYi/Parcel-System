@@ -26,7 +26,7 @@
     <!-- Model for Sign In -->
     <div id="Index_Model_SignIn" class="Modal">
         <!-- Action PHP -->
-        <form class="Modal-content animate" action="ProcessSignIn.php">
+        <form class="Modal-content animate" action="ProcessSignIn.php" method="post">
             <!-- Upper Part -->
             <div class="imgcontainer">
                 <!-- X close model icon -->
@@ -36,7 +36,8 @@
             <!-- Middle Input Part -->
             <div class="container">
                 <label for="signin_username"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" id="signin_username" required>
+                <input type="text" placeholder="Enter Username" name="username" id="signin_username"
+                       autocomplete="off" required>
                 <br>
                 <label for="signin_password"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="password" id="signin_password" required>
@@ -64,7 +65,7 @@
     <!-- Model for Sign Up -->
     <div id="Index_Model_SignUp" class="Modal">
         <!-- Action PHP -->
-        <form class="Modal-content animate" action="ProcessSignUp.php">
+        <form class="Modal-content animate" action="ProcessSignUp.php" method="post">
             <div class="imgcontainer">
                 <!-- X close model icon -->
                 <span onclick="document.getElementById('Index_Model_SignUp').style.display='none'" class="Close"
