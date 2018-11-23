@@ -13,9 +13,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $sqllogin = mysqli_query($dbc, $sqlquerylogin);
 
     if ($sqlquerylogin && $role == 'Admin') {
-        header("Location:AdminMenu.php");
+        header("Location:Admin/AdminMainMenu.php");
     } else if ($sqlquerylogin && $role == 'Student') {
-        header("Location:StudentMenu.php");
+        header("Location:Student/StudentMainMenu.php");
     } else {
         echo "<script>
             window.alert('Username and password or role does not match');
