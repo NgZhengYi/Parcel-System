@@ -2,12 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src=../JS/Navigation.js></script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/Navbar.css">
-    <title>Title</title>
+    <title></title>
 </head>
 <body>
 <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -40,10 +35,14 @@
 
         <ul class="navbar-nav ml-md-auto d-md-flex">
             <li class="nav-item">
-                <a class="nav-link" href="#">Your Name</a>
+                <a class="nav-link" href="../Student/StudentProfile.php">
+                    <?php
+                        echo $_SESSION['username'];
+                    ?>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
+                <a class="nav-link" href="../logoutProcess.php">Logout</a>
             </li>
         </ul>
 
