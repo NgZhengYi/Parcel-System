@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="StyleSheet/indexStyle.css">
+    <link rel="stylesheet" href="StyleSheet/NavBarStyle.css">
     <title>About</title>
 </head>
 <body>

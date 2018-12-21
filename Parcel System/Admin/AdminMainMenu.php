@@ -14,7 +14,7 @@
 
 
 <script src="../JavaScript/navigate.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="../StyleSheet/indexStyle.css">
+<link rel="stylesheet" type="text/css" href="../StyleSheet/NavBarStyle.css">
 </body>
 
 </html>

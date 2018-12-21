@@ -1,0 +1,15 @@
+body {
+    background-color: darkgray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.container {
+    align-content: center;
+    margin-top: 10%;
+}
+
+.details li {
+    list-style: none;
+}

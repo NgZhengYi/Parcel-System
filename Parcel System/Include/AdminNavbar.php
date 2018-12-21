@@ -35,11 +35,14 @@
 
         <ul class="navbar-nav ml-md-auto d-md-flex">
             <li class="nav-item">
-                <a class="nav-link" href="../Admin/AdminProfile.php">
+                <strong class="nav-link" style="color: crimson">
                     <?php
-                    echo $_SESSION['username'];
+                    echo "Admin: ", $_SESSION['username'];
                     ?>
-                </a>
+                </strong>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../Admin/AdminProfile.php">Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../logoutProcess.php">Logout</a>

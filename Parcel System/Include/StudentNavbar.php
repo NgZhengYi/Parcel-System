@@ -18,7 +18,7 @@
 
         <ul class="navbar-nav animate side-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home
+                <a class="nav-link" href="../Student/StudentMainMenu.php">Home
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
@@ -35,11 +35,14 @@
 
         <ul class="navbar-nav ml-md-auto d-md-flex">
             <li class="nav-item">
-                <a class="nav-link" href="../Student/StudentProfile.php">
+                <strong class="nav-link" style="color: yellow">
                     <?php
-                        echo $_SESSION['username'];
+                    echo "Student: ", $_SESSION['username'];
                     ?>
-                </a>
+                </strong>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../Student/StudentProfile.php">Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../logoutProcess.php">Logout</a>

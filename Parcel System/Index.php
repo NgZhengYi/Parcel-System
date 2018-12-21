@@ -7,11 +7,13 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="StyleSheet/indexStyle.css">
+    <link rel="stylesheet" href="StyleSheet/NavBarStyle.css">
     <title>UUM Parcel System</title>
 </head>
-<body>
+<body style="background-color: antiquewhite">
 <?php include_once 'Include/indexNav.php' ?>
+
+
 
 </body>
 </html>
